@@ -3,6 +3,10 @@
 
 	export let form;
 
+	const page = {
+		title: 'Kyle P. Ulman'
+	};
+
 	const MESSAGE_LIMIT = 1000;
 	const TOAST_TIMEOUT = 10 * 1000;
 
@@ -38,15 +42,15 @@
 
 		toastStore.trigger(t);
 	}
-
-	const page = {
-		title: 'Kyle P. Ulman'
-	};
 </script>
+
+<svelte:head>
+	<title>{page.title}</title>
+</svelte:head>
 
 <section class="space-y-4">
 	<h1 class="h1">{page.title}</h1>
-	<p>Hello! I'm Kyle. This sentence describes my identity as a developer.</p>
+	<p>Hello! I'm Kyle, a freelance web developer from Wilmington, North Carolina.</p>
 	<p>
 		This is the professional work I'm currently engaged in. I could also list projects I'm working
 		on or companies I've founded here.
@@ -62,9 +66,9 @@
 		out!
 	</p>
 	<h2 class="h2">Find Me Online</h2>
-	<div class="logo-cloud grid-cols-1 gap-1 lg:!grid-cols-3">
+	<div class="logo-cloud grid-cols-1 gap-1 sm:!grid-cols-2">
 		<a href="https://github.com/kylepulman" class="logo-item"><span>GitHub</span></a>
-		<a href="https://youtube.com/@kylepulman" class="logo-item">YouTube</a>
+		<!-- <a href="https://youtube.com/@kylepulman" class="logo-item">YouTube</a> -->
 		<a href="https://www.upwork.com/freelancers/~016325a1e595bfe265" class="logo-item">Upwork</a>
 	</div>
 	<h2 class="h2">Let's Work Together</h2>

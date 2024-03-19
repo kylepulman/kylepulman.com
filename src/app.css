@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'Inter';
+	src: url('/inter.ttf');
+}
+
+:root [data-theme='skeleton'] {
+	--theme-font-family-base: 'Inter', sans-serif;
+	--theme-font-family-heading: 'Inter', sans-serif;
+}
+
 .input-error::placeholder,
 .input-warning::placeholder {
 	--tw-text-opacity: 0.5;
