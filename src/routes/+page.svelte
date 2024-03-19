@@ -1,8 +1,4 @@
 <script lang="ts">
-	export let form;
-
-	console.log(form);
-
 	const page = {
 		title: 'Kyle P. Ulman'
 	};
