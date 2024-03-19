@@ -1,4 +1,8 @@
 <script lang="ts">
+	export let form;
+
+	console.log(form);
+
 	const page = {
 		title: 'Kyle P. Ulman'
 	};
@@ -35,14 +39,20 @@
 	<h2 class="h2">Let's Work Together</h2>
 	<p>If you think I'd be a good fit for a project, please complete the form below.</p>
 	<form method="post" class="space-y-4">
-		<label class="label">
+		<label class="label" for="name">
 			<span>Your name:</span>
-			<input class="input" type="text" placeholder="Kyle P. Ulman" />
+			<input name="name" id="name" class="input" type="text" placeholder="Kyle P. Ulman" />
 		</label>
 
-		<label class="label">
+		<label class="label" for="email">
 			<span>Your email:</span>
-			<input class="input" type="email" placeholder="kylepulman@gmail.com" />
+			<input
+				name="email"
+				id="email"
+				class="input"
+				type="email"
+				placeholder="kylepulman@gmail.com"
+			/>
 		</label>
 
 		<label class="label" for="message">
