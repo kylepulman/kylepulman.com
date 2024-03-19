@@ -25,27 +25,21 @@
 		especially social, I'll include a call-to-action to those who share interests with me to reach
 		out!
 	</p>
-	<ul>
-		<h2>Find me on:</h2>
-		<li></li>
-	</ul>
-
+	<h2 class="h2">Find Me Online</h2>
 	<div class="logo-cloud grid-cols-1 gap-1 lg:!grid-cols-3">
 		<a href="https://github.com/kylepulman" class="logo-item"><span>GitHub</span></a>
 		<a href="https://youtube.com/@kylepulman" class="logo-item">YouTube</a>
 		<a href="https://www.upwork.com/freelancers/~016325a1e595bfe265" class="logo-item">Upwork</a>
 	</div>
-
 	<h2 class="h2">Let's Work Together</h2>
 	<p>If you think I'd be a good fit for a project, please complete the form below.</p>
-	<form method="post" class="space-y-4">
+	<form method="post" class="space-y-2">
 		<label class="label" for="name">
-			<span>Your name:</span>
+			<span class="text-sm">Your name:</span>
 			<input name="name" id="name" class="input" type="text" placeholder="Kyle P. Ulman" />
 		</label>
-
 		<label class="label" for="email">
-			<span>Your email:</span>
+			<span class="text-sm">Your email:</span>
 			<input
 				name="email"
 				id="email"
@@ -54,9 +48,8 @@
 				placeholder="kylepulman@gmail.com"
 			/>
 		</label>
-
 		<label class="label" for="message">
-			<span>Please describe your project and include any additional details:</span>
+			<span class="text-sm">Please describe your project and include any additional details:</span>
 			<textarea
 				name="message"
 				id="message"

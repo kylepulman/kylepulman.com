@@ -8,6 +8,6 @@
 	<LightSwitch />
 </header>
 <slot />
-<footer class="my-4">
+<footer class="my-4 text-center">
 	<small>&copy; {new Date().getFullYear()} Kyle P. Ulman</small>
 </footer>
