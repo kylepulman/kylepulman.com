@@ -1,7 +1,7 @@
-import { skeleton } from '@skeletonlabs/tw-plugin';
-import forms from '@tailwindcss/forms';
-import { join } from 'path';
-import type { Config } from 'tailwindcss';
+import { skeleton } from '@skeletonlabs/tw-plugin'
+import forms from '@tailwindcss/forms'
+import { join } from 'path'
+import type { Config } from 'tailwindcss'
 
 const config = {
 	darkMode: 'class',
@@ -22,6 +22,6 @@ const config = {
 			}
 		})
 	]
-} satisfies Config;
+} satisfies Config
 
-export default config;
+export default config

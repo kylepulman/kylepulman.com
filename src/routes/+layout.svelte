@@ -1,9 +1,9 @@
 <script>
-	import { page } from '$app/stores';
-	import { Head } from '$lib/Head';
-	import '../app.css';
+	import { page } from '$app/stores'
+	import { Head } from '$lib/Head'
+	import '../app.css'
 
-	export let data;
+	export let data
 </script>
 
 <Head
@@ -13,7 +13,7 @@
 	}}
 />
 
-<header class="page pad-x">
+<header class="page pad-x mar-y">
 	<h1><a href="/">{data.head.title}</a> • <span class="font-normal">{data.head.description}</span></h1>
 </header>
 
@@ -21,6 +21,6 @@
 	<slot />
 </main>
 
-<footer class="page pad-x">
+<footer class="page pad-x mar-y">
 	<small>Copyright © {new Date().getFullYear()} • {data.head.title}</small>
 </footer>

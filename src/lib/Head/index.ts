@@ -1,6 +1,6 @@
-export { default as Head } from './index.svelte';
+export { default as Head } from './index.svelte'
 
 export type HeadShape = {
-	title: string;
-	description: string;
-};
+	title: string
+	description: string
+}

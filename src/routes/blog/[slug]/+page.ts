@@ -1,17 +1,17 @@
-import { error } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit'
 
 export const load = async ({ params }) => {
-	let module;
+	let module
 
 	try {
-		module = await import(`../posts/${params.slug}.md`);
+		module = await import(`../posts/${params.slug}.md`)
 	} catch (err) {
-		console.error(err);
-		error(404);
+		console.error(err)
+		error(404)
 	}
 
 	return {
 		head: module.metadata,
 		module
-	};
-};
+	}
+}

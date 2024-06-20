@@ -17,12 +17,20 @@
 	--theme-font-family-heading: 'Montserrat', sans-serif;
 }
 
+.gap {
+	@apply gap-4 sm:gap-4 md:gap-4 lg:gap-8 xl:gap-8 2xl:gap-8;
+}
+
+.mar-y {
+	@apply my-4 sm:my-8 md:my-8 lg:my-8 xl:my-12 2xl:my-16;
+}
+
 .pad-x {
-	@apply px-4 md:px-8 lg:px-8 xl:px-8 2xl:px-8;
+	@apply px-4 sm:px-4 md:px-8 lg:px-8 xl:px-8 2xl:px-8;
 }
 
 header.page,
 main.page,
 footer.page {
-	@apply mx-auto my-8 w-full max-w-screen-md sm:my-8 md:my-8 lg:my-8 lg:max-w-screen-2xl xl:my-12 2xl:my-16;
+	@apply mx-auto w-full max-w-screen-md lg:max-w-screen-2xl;
 }

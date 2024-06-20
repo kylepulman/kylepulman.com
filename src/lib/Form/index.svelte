@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { fade } from 'svelte/transition';
-	import type { FormShape } from '.';
+	import { enhance } from '$app/forms'
+	import { fade } from 'svelte/transition'
+	import type { FormShape } from '.'
 
-	let sending: boolean = false;
+	let sending: boolean = false
 
-	export let content: FormShape;
+	export let content: FormShape
 </script>
 
 <form
 	class="card variant-ghost-surface w-full space-y-4 p-4"
 	method="post"
 	use:enhance={() => {
-		sending = true;
+		sending = true
 		return async ({ update }) => {
-			sending = false;
-			return await update();
-		};
+			sending = false
+			return await update()
+		}
 	}}
 >
 	{#if sending}
@@ -50,7 +50,7 @@
 	</label>
 	<label class="label" for={content.input.inputs.message.name}>
 		<span>{content.input.inputs.message.label}</span>
-		<textarea class="textarea variant-ghost-primary" class:variant-ghost-error={!!content.output?.error?.message} name={content.input.inputs.message.name} id={content.input.inputs.message.name} required={content.input.inputs.message.isRequired} placeholder={content.input.inputs.message.placeholder}></textarea>
+		<textarea class="textarea variant-ghost-primary h-28" class:variant-ghost-error={!!content.output?.error?.message} name={content.input.inputs.message.name} id={content.input.inputs.message.name} required={content.input.inputs.message.isRequired} placeholder={content.input.inputs.message.placeholder}></textarea>
 	</label>
 	<button class="variant-filled-primary btn" type="submit">{content.input.submit.label}</button>
 </form>

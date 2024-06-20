@@ -4,5 +4,5 @@ export const load = async () => {
 			title: 'Kyle P. Ulman',
 			description: 'Quality browser extensions.'
 		}
-	};
-};
+	}
+}
