@@ -13,14 +13,14 @@
 	}}
 />
 
-<header class="page">
+<header class="page pad-x">
 	<h1><a href="/">{data.head.title}</a> • <span class="font-normal">{data.head.description}</span></h1>
 </header>
 
-<main class="flex-1">
+<main class="page flex-1">
 	<slot />
 </main>
 
-<footer class="page">
+<footer class="page pad-x">
 	<small>Copyright © {new Date().getFullYear()} • {data.head.title}</small>
 </footer>

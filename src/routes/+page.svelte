@@ -5,10 +5,12 @@
 	export let form: FormShape['output'];
 </script>
 
-<section class="page">
-	<article class="max-w-prose space-y-4" id={data.content.hero.id}>
+<section class="pad-x flex flex-col gap-8 lg:flex-row">
+	<article class="max-w-prose flex-1 space-y-4" id={data.content.hero.id}>
 		<h2 class="h1">{data.content.hero.heading}</h2>
 		<p>{data.content.hero.detail}</p>
-		<Form content={{ input: data.content.hero.formInput, output: form }} />
 	</article>
+	<figure class=" max-w-prose flex-1">
+		<Form content={{ input: data.content.hero.formInput, output: form }} />
+	</figure>
 </section>

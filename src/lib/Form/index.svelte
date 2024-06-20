@@ -9,7 +9,7 @@
 </script>
 
 <form
-	class="w-full flex-1 space-y-4"
+	class="card variant-ghost-surface w-full space-y-4 p-4"
 	method="post"
 	use:enhance={() => {
 		sending = true;
@@ -20,11 +20,11 @@
 	}}
 >
 	{#if sending}
-		<div class="card variant-ghost-surface w-fit p-4" in:fade>
+		<div class="card variant-ghost-surface p-4" in:fade>
 			<p>Sending...</p>
 		</div>
 	{:else if content.output?.error && sending === false}
-		<div class="card variant-ghost-error w-fit p-4" in:fade>
+		<div class="card variant-ghost-error p-4" in:fade>
 			<ul class="list">
 				<p class="font-medium">Please address the following errors:</p>
 				{#each Object.values(content.output.error) as value}
@@ -36,7 +36,7 @@
 			</ul>
 		</div>
 	{:else if content.output?.success && sending === false}
-		<div class="card variant-ghost-success w-fit p-4" in:fade>
+		<div class="card variant-ghost-success p-4" in:fade>
 			<p>{content.output.success}</p>
 		</div>
 	{/if}

@@ -6,7 +6,7 @@
 	<title>Error • Kyle P. Ulman</title>
 </svelte:head>
 
-<section class="page">
+<section class="pad-x">
 	<h1 class="h1">{$page.status}</h1>
 	<p>{$page.error?.message}</p>
 </section>
