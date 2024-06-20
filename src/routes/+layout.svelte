@@ -13,7 +13,7 @@
 	}}
 />
 
-<header>
+<header class="page">
 	<h1><a href="/">{data.head.title}</a></h1>
 </header>
 
@@ -21,6 +21,6 @@
 	<slot />
 </main>
 
-<footer>
+<footer class="page">
 	<small>Copyright &copy; {new Date().getFullYear()} &bull; {data.head.title}</small>
 </footer>
