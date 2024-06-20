@@ -23,6 +23,10 @@
 		<div class="card variant-ghost-surface p-4" in:fade>
 			<p>Sending...</p>
 		</div>
+	{:else if content.output?.success && sending === false}
+		<div class="card variant-ghost-success p-4" in:fade>
+			<p>{content.output.success}</p>
+		</div>
 	{:else if content.output?.error && sending === false}
 		<div class="card variant-ghost-error p-4" in:fade>
 			<ul class="list">
@@ -34,10 +38,6 @@
 					</li>
 				{/each}
 			</ul>
-		</div>
-	{:else if content.output?.success && sending === false}
-		<div class="card variant-ghost-success p-4" in:fade>
-			<p>{content.output.success}</p>
 		</div>
 	{/if}
 	<label class="label" for={content.input.inputs.name.name}>

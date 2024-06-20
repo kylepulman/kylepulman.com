@@ -1,4 +1,5 @@
 import type { FormShape } from '$lib/Form'
+import { sendMessage } from '$lib/nodemailer'
 
 export const load = async () => {
 	const hero: {
@@ -52,7 +53,7 @@ export const load = async () => {
 		}
 	} = {
 		id: 'about',
-		heading: "Hello, I'm Kyle",
+		heading: "👋 Hello, I'm Kyle",
 		detail: ['I am a web developer specializing in browser extension development. A well-crafted extension can help business boost productivity by automating browser tasks and removing friction from the browsing experience.', "Start a project with me, and I'll ensure quality with rigorous testing, comprehensive documentation, and responsive support."],
 		image: {
 			source: '/images/me-still.gif',
@@ -94,7 +95,10 @@ export const actions = {
 			}
 		}
 
-		await new Promise<void>((resolve) => setTimeout(() => resolve(), 3000))
+		await sendMessage({
+			text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+			html: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
+		})
 
 		return {
 			success: 'Message sent successfully!'
