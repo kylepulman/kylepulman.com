@@ -14,7 +14,7 @@
 />
 
 <header class="page">
-	<h1><a href="/">{data.head.title}</a></h1>
+	<h1><a href="/">{data.head.title}</a> • <span class="font-normal">{data.head.description}</span></h1>
 </header>
 
 <main class="flex-1">
@@ -22,5 +22,5 @@
 </main>
 
 <footer class="page">
-	<small>Copyright &copy; {new Date().getFullYear()} &bull; {data.head.title}</small>
+	<small>Copyright © {new Date().getFullYear()} • {data.head.title}</small>
 </footer>
