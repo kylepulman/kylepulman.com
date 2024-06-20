@@ -1,6 +1,6 @@
 {
 	"name": "kylepulman.com",
-	"description": "I build quality web extensions.",
+	"description": "I build quality browser extensions.",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {

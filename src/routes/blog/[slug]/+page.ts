@@ -11,6 +11,7 @@ export const load = async ({ params }) => {
 	}
 
 	return {
+		head: module.metadata,
 		module
 	};
 };

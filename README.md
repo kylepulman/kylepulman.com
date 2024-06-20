@@ -1,3 +1,3 @@
 # Kyle P. Ulman
 
-I build quality web extensions.
+I build quality browser extensions.
