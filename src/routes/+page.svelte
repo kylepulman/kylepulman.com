@@ -1,6 +1,6 @@
 <script lang="ts">
-  import BellAlert from "$lib/icons/bell-alert.svelte";
   import Bars3BottomLeft from "$lib/icons/bars-3-bottom-left.svelte";
+  import BellAlert from "$lib/icons/bell-alert.svelte";
   import Megaphone from "$lib/icons/megaphone.svelte";
 
   export let data;
@@ -12,7 +12,6 @@
 </header>
 <section>
   {#each data.feed as post}
-    {@const createdAt = new Date(post.createdAt)}
     <article class="card bg-base-100 shadow-xl card-side my-6">
       <figure class="pl-8 flex-shrink-0">
         {#if post._source === "Pages"}
@@ -23,24 +22,24 @@
       </figure>
       <div class="card-body">
         <small class="text-neutral/50 dark:text-neutral-content/50"
-          >{createdAt.toLocaleString()}</small
+          >{post.createdAt}</small
         >
         <h2 class="card-title">{post.title}</h2>
         {#if post.description}<p>{post.description}</p>{/if}
         {#if post._source === "Pages"}
           <a
             class="link mt-2 self-start text-neutral/50 hover:text-neutral/75 dark:text-neutral-content/50 dark:hover:text-neutral-content/75 text-sm"
-            href={post.slug}>Read on...</a
+            href={post.href}>Read on...</a
           >
         {:else if post._source === "Bsky"}
           <a
             class="link mt-2 self-start text-neutral/50 hover:text-neutral/75 dark:text-neutral-content/50 dark:hover:text-neutral-content/75 text-sm"
-            href={post.slug}>View on Bluesky</a
+            href={post.href}>View on Bluesky</a
           >
         {:else}
           <a
             class="link mt-2 self-start text-neutral/50 hover:text-neutral/75 dark:text-neutral-content/50 dark:hover:text-neutral-content/75 text-sm"
-            href={post.slug}>{post.slug}</a
+            href={post.href}>{post.href}</a
           >
         {/if}
       </div>

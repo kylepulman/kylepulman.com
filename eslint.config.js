@@ -27,5 +27,22 @@ export default ts.config(
 	    parser: ts.parser
 	  }
 	}
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        // Allow vars with "_" prepended: https://typescript-eslint.io/rules/no-unused-vars/#benefits-over-typescript
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          varsIgnorePattern: '^_',
+        },
+      ],
+    }
   }
 );
