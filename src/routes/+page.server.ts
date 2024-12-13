@@ -1,4 +1,5 @@
 import { BSKY_IDENTIFIER, VITE_BSKY_ORIGIN_URL } from "$env/static/private"
+import type { PageMetadata } from "$lib"
 import { listMyPosts } from "$lib/bluesky"
 import type { AppBskyFeedPost } from "@atproto/api"
 import type { ServerLoadEvent } from "@sveltejs/kit"
@@ -12,15 +13,23 @@ type FeedItem = {
 }
 
 const getPages = async () => {
-  const feed: FeedItem[] = [
-    {
+  const feed: FeedItem[] = []
+
+  const modules = import.meta.glob<boolean, string, { default: PageMetadata }>('$lib/pages/*/index.ts')
+
+  for (const path in modules) {
+    const module = await modules[path]()
+
+    const href = path.slice(path.indexOf('pages/') + 6, path.indexOf('/index'))
+
+    feed.push({
       _source: 'Pages',
-      title: 'Test Post',
-      description: 'This is a test post.',
-      createdAt: new Date('2024-12-13T15:55:55.732Z').toLocaleString(),
-      href: 'test-post'
-    },
-  ]
+      title: module.default.title,
+      description: module.default.description,
+      createdAt: new Date(module.default.createdAt).toLocaleString(),
+      href,
+    })
+  }
 
   return feed
 }
@@ -80,7 +89,7 @@ export const load = async (event) => {
 
     setBsky(event, bskyFeed)
   }
-  
+
   const feed: FeedItem[] = [...pagesFeed, ...bskyFeed]
 
   feed.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
