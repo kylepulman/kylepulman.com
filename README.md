@@ -13,4 +13,4 @@ I use TypeScript to build cool stuff for the web.
 - [ ] update head on navigation
 - [ ] preload on home button
 - [ ] code block syntax highlighting
-- [ ] handle page 404s
+- [x] handle page 404s

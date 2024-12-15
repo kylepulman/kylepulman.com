@@ -20,15 +20,17 @@ const getPages = async () => {
   for (const path in modules) {
     const module = await modules[path]()
 
-    const href = path.slice(path.indexOf('pages/') + 6, path.indexOf('/index'))
+    if (module.default.isPublic) {
+      const href = path.slice(path.indexOf('pages/') + 6, path.indexOf('/index'))
 
-    feed.push({
-      _source: 'Pages',
-      title: module.default.title,
-      description: module.default.description,
-      createdAt: new Date(module.default.createdAt).toLocaleString(),
-      href,
-    })
+      feed.push({
+        _source: 'Pages',
+        title: module.default.title,
+        description: module.default.description,
+        createdAt: new Date(module.default.createdAt).toLocaleString(),
+        href,
+      })
+    }
   }
 
   return feed
