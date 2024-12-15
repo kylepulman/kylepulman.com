@@ -11,7 +11,7 @@
   <meta name="description" content={data.metadata.description} />
 </svelte:head>
 
-<main class="prose mx-auto max-w-prose my-12 space-y-6 p-4">
+<main class="prose mx-auto max-w-prose space-y-6 p-4">
   <header class="flex items-center justify-between">
     <button
       on:click={() => goto("/")}

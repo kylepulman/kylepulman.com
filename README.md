@@ -9,8 +9,8 @@ I use TypeScript to build cool stuff for the web.
 - [x] set up Bluesky API client & feed
 - [x] set up markdown pages feed
 - [x] deploy on Vercel
-- [ ] fix page styling
+- [x] fix page styling
 - [ ] update head on navigation
-- [ ] preload on home button
+- [ ] add loading spinner on home navigation
 - [ ] code block syntax highlighting
 - [x] handle page 404s
